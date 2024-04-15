@@ -1,6 +1,6 @@
 # 使用方法
 
-```json
+```xml
 roslaunch trajectory_player trajectory_player.launch
 ```
 
