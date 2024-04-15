@@ -1,0 +1,28 @@
+<launch>
+    <!-- Define common parameters -->
+    <arg name="data_interval" default="0.1" />
+    <arg name="discrete_num" default="10" />
+    <arg name="loop_flag" default="true" />
+
+    <!-- Group nodes under common parameters -->
+    <group ns="vehicles">
+        <param name="data_interval" value="$(arg data_interval)" />
+        <param name="discrete_num" value="$(arg discrete_num)" />
+        <param name="loop_flag" value="$(arg loop_flag)" />
+
+        <!-- Node definitions -->
+        <node name="model_1" pkg="trajectory_player" type="trajectory_player.py" output="screen">
+            <param name="data_path"
+                value="/home/i/0MasterThesis/Code/simulation_env/data/hill1/straight_line_trajectory1.csv" />
+            <param name="model_name" value="hmmwv" />
+        </node>
+
+        <!-- Node definitions -->
+        <node name="model_2" pkg="trajectory_player" type="trajectory_player.py" output="screen">
+            <param name="data_path"
+                value="/home/i/0MasterThesis/Code/simulation_env/data/hill1/straight_line_trajectory.csv" />
+            <param name="model_name" value="catvehicle" />
+        </node>
+    </group>
+</launch>
+    

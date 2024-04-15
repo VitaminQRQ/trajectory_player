@@ -1,0 +1,19 @@
+<launch>
+    <node name="trajectory_player_hmmwv" pkg="trajectory_player" type="trajectory_player.py" output="screen">
+        <!-- 轨迹数据路径 -->
+        <param name="data_path" value="/home/qrq_20/simulation_env/data/hill1/trajectory.csv"/>
+        
+        <!-- 模型名称（从 sdf 文件中读取） -->
+        <param name="model_name" value="hmmwv"/>
+
+        <!-- 轨迹点的时间间隔 -->
+        <param name="data_interval" value="0.1"/>
+
+        <!-- 间隔时间插值数，调节动画的丝滑程度 -->
+        <param name="discrete_num" value="10"/>
+
+        <!-- 是否循环播放 -->
+        <param name="loop_flag" value="False"/>
+    </node>
+
+</launch>
